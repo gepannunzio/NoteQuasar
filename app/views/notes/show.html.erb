@@ -1,0 +1,10 @@
+<h1 class='title' > <%= @note.title %> </h1>
+
+<p class='body' > <%= @note.body %> </p>
+
+<%= link_to t('.edit'), edit_note_path(@note) %>
+
+<%= link_to t('.delete'), note_path(@note) , data: {
+    turbo_method: :delete,
+    turbo_confirm: t('common.confirm')
+} %>

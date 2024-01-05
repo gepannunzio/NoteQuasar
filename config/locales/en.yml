@@ -1,0 +1,55 @@
+es:
+  activerecord:
+    models:
+      note: Note
+    attributes:
+      note:
+        title: 'Title'
+        body: 'Body'
+    errors:
+      models:
+        note:
+          attributes:
+            title:
+              blank: "Can't be empty"
+            body:
+              blank: "Can't be empty"
+  common:
+    confirm: "Are you sure?"
+    back: 'Go Back'
+  shared:
+    header:
+      add: 'Add Note'
+  notes:
+    edit:
+      title: "Edit Note"
+    new:
+      title: "New Note"
+    index:
+      title: 'Notes: '
+    show:
+      edit: 'Edit Note'
+      delete: 'Delete Note'
+    create:
+      created: "Your note has been succesfully created"
+    update:
+      updated: "Your note has been successfully updated"
+    destroy:
+      destroyed: "Your note has been deleted"
+  tags:
+    tag:
+      edit: 'Edit'
+      delete: 'Delete'
+    index:
+      title: 'Tags'
+      new: 'Add tag'
+    edit:
+      title: 'Edit tag'
+    create:
+      created: 'Your tag has been successfully created'
+    update:
+      updated: 'Your tag has been successfully updated'
+    destroy:
+      destroyed: 'Your tag has been successfully destroyed'
+    new:
+      title: 'New tag'

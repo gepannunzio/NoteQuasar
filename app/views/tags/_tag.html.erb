@@ -1,0 +1,12 @@
+<div id="<%= dom_id tag %>">
+  <p>
+    <%= tag.name %>
+    <%= link_to t('.edit'), edit_tag_path(tag) %>
+
+    <%= link_to t('.delete'), tag_path(tag) , data: {
+        turbo_method: :delete,
+        turbo_confirm: t('common.confirm')
+      } %>
+  </p>
+
+</div>

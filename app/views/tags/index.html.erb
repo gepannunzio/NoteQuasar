@@ -1,0 +1,9 @@
+<h1><% t('.title' )%></h1>
+
+<div id="tags">
+  <% @tags.each do |tag| %>
+    <%= render tag %>
+  <% end %>
+</div>
+
+<%= link_to t('.new'), new_tag_path %>

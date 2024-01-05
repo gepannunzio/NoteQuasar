@@ -1,0 +1,55 @@
+es:
+  activerecord:
+    models:
+      note: Nota
+    attributes:
+      note:
+        title: 'Titulo'
+        body: 'Cuerpo'
+    errors:
+      models:
+        note:
+          attributes:
+            title:
+              blank: 'no puede estar vacío'
+            body:
+              blank: 'no puede estar vacía'
+  common:
+    confirm: "Estas Seguro?"
+    back: 'Volver'
+  shared:
+    header:
+      add: 'Agregar Nota'
+  notes:
+    edit:
+      title: "Editar Nota"
+    new:
+      title: "Nueva Nota"
+    index:
+      title: 'Notas: '
+    show:
+      edit: 'Editar Nota'
+      delete: 'Eliminar Nota'
+    create:
+      created: "La Nota se ha creado con exito"
+    update:
+      updated: "La Nota se ha actualizado con exito"
+    destroy:
+      destroyed: "La Nota ha sido eliminada"
+  tags:
+    tag:
+      edit: 'Editar'
+      delete: 'Eliminar'
+    index:
+      title: 'Tags'
+      new: 'Agregar tag'
+    edit:
+      title: 'Editar tag'
+    create:
+      created: 'El tag se ha creado'
+    update:
+      updated: 'El tag se ha actualizado'
+    destroy:
+      destroyed: 'El tag se ha eliminado'
+    new:
+      title: 'Nuevo tag'
