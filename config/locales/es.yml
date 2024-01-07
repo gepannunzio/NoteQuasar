@@ -1,41 +1,77 @@
 es:
+  metatitle: ' Mis Notas'
   activerecord:
     models:
       note: Nota
+      user: Usuario
+      category: Tag
     attributes:
       note:
         title: 'Titulo'
         body: 'Cuerpo'
-    errors:
-      models:
-        note:
-          attributes:
-            title:
-              blank: 'no puede estar vacío'
-            body:
-              blank: 'no puede estar vacía'
+      user:
+        email: 'Correo electrónico'
+        username: 'Usuario'
+        password: 'Contraseña'
+      tag:
+        name: 'Nombre'
   common:
     confirm: "Estas Seguro?"
     back: 'Volver'
+    not_logged_in: 'Inicia Sesion Antes De Continuar'
+    not_authorized: 'No tienes permisos para esta acción'
+    show: 'Ver'
+    delete: 'Eliminar'
+    edit: 'Editar'
   shared:
     header:
       add: 'Agregar Nota'
+      login: 'Acceso'
+      register: 'Registro'
+      logout: 'Salir'
+      archives: 'Archivados'
+      actives: 'Activos'
+  authentication:
+    users:
+      create:
+        created: 'Tu cuenta se ha creado!'
+      new:
+        register: 'Registrate ahora'
+    sessions:
+      create:
+        created: 'Bienvenido!'
+        failed: 'Login inválido!'
+      destroy:
+        destroyed: 'Tu sesión ha terminado! Hasta la próxima'
+      new:
+        login: 'Inicia Sesion'
   notes:
     edit:
       title: "Editar Nota"
     new:
       title: "Nueva Nota"
     index:
-      title: 'Notas: '
+      title: 'Notas Activas: '
+      all: 'Todos'
+      query_text: 'Buscar...'
     show:
       edit: 'Editar Nota'
       delete: 'Eliminar Nota'
+      activate: 'Activar Nota'
+      archive: 'Archivar Nota'
+      back: 'Volver'
     create:
       created: "La Nota se ha creado con exito"
     update:
       updated: "La Nota se ha actualizado con exito"
     destroy:
       destroyed: "La Nota ha sido eliminada"
+    form:
+      new_tag: 'Nuevo Tag'
+      save: 'Guardar Nota'
+    archive:
+      activate: 'Activar Nota'
+      archive: 'Archivar Nota'
   tags:
     tag:
       edit: 'Editar'
@@ -52,4 +88,18 @@ es:
     destroy:
       destroyed: 'El tag se ha eliminado'
     new:
-      title: 'Nuevo tag'
+      tag: 'Nuevo tag'
+  archives:
+      index:
+        title: 'Notas Archivadas'
+        all: 'Todos'
+        query_text: 'Buscar...'
+      create:
+        created: 'Tu Nota ha sido Archivada'
+      destroy:
+        destroyed: 'Tu Nota esta Activa'
+  home:
+    welcome:
+      welcome: 'Bienvenido a NoteQuasar'
+      phrase: 'Estas listo para esta nueva aventura?'
+      get_started: 'Empezemos!'

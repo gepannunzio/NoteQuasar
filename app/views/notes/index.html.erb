@@ -1,6 +1,25 @@
+<%= turbo_frame_tag 'home' do %>
+  <div class="text-left mb-4">
+    <h2 class="text-2xl font-bold text-gray-800 mb-2 my-2 mx-5">
+      <%= t('.title') %>
+    </h2>
+  </div>
 
-<% @notes.each do |note| %>
-    <%= link_to note_path(note), class: 'note' do %>
-        <h2><%= note.title %> </h2>
+  <%= form_with url: notes_path, method: :get do |form| %>
+    <%= form.text_field :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] , class: "w-full rounded-2xl border-gray-200" %>
+  <% end %>
+
+  <h4 class="mx-4 text-xl font-bold text-gray-800 my-2">Tags:</h4>
+  <div class="flex items-center space-x-4 mx-2 ">
+    <%= link_to t('.all'), notes_path, class: "link-btn" %>
+    <%= render partial: 'tag' %>
+  </div>
+  
+  <%= turbo_frame_tag :notes, class: 'notes table' do %>
+    <%= turbo_frame_tag "notes-#{@pagy.page}", class: 'table-row-group' do %>
+      <%= render partial: 'note', collection: @notes %>
     <% end %>
+    <%= turbo_frame_tag "notes-#{@pagy.next}", class: 'table-row-group', src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
+  <% end %>
+  
 <% end %>

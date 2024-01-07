@@ -16,7 +16,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
 
     if @tag.save
-      redirect_to tags_url, notice: t('.created')
+      redirect_to new_note_path, notice: t('.created')
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class TagsController < ApplicationController
   def update
 
     if tag.update(tag_params)
-      redirect_to tags_url, notice: t('.updated')
+      redirect_to tags_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -48,6 +48,6 @@ class TagsController < ApplicationController
   end
 
   def tag_params
-    params.require(:tag).permit(:name)
+    params.require(:tag).permit(:name, :user_id)
   end
 end

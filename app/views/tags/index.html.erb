@@ -1,9 +1,11 @@
-<h1><% t('.title' )%></h1>
+<div class="max-w-screen-lg mx-auto mt-8">
+  <h1 class="text-3xl font-bold mb-8"><%= t('.title') %></h1>
 
-<div id="tags">
-  <% @tags.each do |tag| %>
-    <%= render tag %>
-  <% end %>
+  <div id="tags" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <% @tags.where(user_id: Current.user.id).each do |tag| %>
+      <%= render tag %>
+    <% end %>
+  </div>
 </div>
 
-<%= link_to t('.new'), new_tag_path %>
+<%#= link_to t('.new'), new_tag_path %>

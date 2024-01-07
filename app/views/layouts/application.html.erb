@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Notes </title>
+    <title>NoteQuasar | <%= t('.metatitle') %> </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-frame': 'reload' %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
 
-  <body>
+  <body class="bg-gray-200">
     <%= render 'shared/flash' %>
     <%= render 'shared/header' %>
     <%= yield %>
+    <%= turbo_frame_tag "modal" %>
   </body>
 </html>

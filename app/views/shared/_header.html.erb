@@ -1,6 +1,53 @@
-    
-<%= link_to notes_path do %>
-    <h1> <%= t('.title') %> </h1>
-<% end %>
-<%= link_to t('.add'), new_note_path %>
-<%= link_to t('.tags'), tags_path %>
+<div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white border-gray-300 shadow-sm py-2">
+  <div class="container mx-auto flex justify-between items-center px-4 py-2">
+
+  <div class="flex items-center">
+    <%= link_to root_path, class: 'text-3xl font-bold text-white hover:text-indigo-800 transition duration-300 ease-in-out' do %>
+      NoteQuasar
+    <% end %>
+  </div>
+
+  <div class="flex items-center space-x-2">
+  <% if Current.user %>
+    <div type="div" class="w-30 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        <%= link_to t('.add'), new_note_path %>
+    </div>
+  <% end %>
+  <% if Current.user && request.path != "/archives" %>
+    <div type="div" class="w-30 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        <%= link_to t('.archives'), archives_path %>
+    </div>
+  <% end %>
+  <% if Current.user && request.path != "/active" %>
+    <div type="div" class="w-30 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        <%= link_to t('.actives'), notes_path  %>
+    </div>
+  <% end %>
+  <% if Current.user %>
+    <div type="div" class="w-30 text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        <%= link_to t('.tags'), tags_path  %>
+    </div>
+  <% end %>
+
+  <% unless Current.user %>
+  <div type="div" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+      <%= link_to t('.login'), new_session_path, data: { turbo_frame: "modal" } %>
+  </div>
+  <div type="div" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+      <%= link_to t('.register'), new_user_path, data: { turbo_frame: "modal" } %>
+  </div> 
+  <% end %>
+
+  <% if Current.user %>
+    <div type="div" class="w-30 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+      <%= link_to t('.logout'), session_path(Current.user.id), data: {
+        turbo_method: :delete,
+        turbo_confirm: t('common.confirm')} %>
+    </div>
+  <% end %>
+
+  </div>
+
+
+  </div>
+</div>  

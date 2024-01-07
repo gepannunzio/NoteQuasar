@@ -1,12 +1,9 @@
-<div id="<%= dom_id tag %>">
-  <p>
-    <%= tag.name %>
-    <%= link_to t('.edit'), edit_tag_path(tag) %>
-
-    <%= link_to t('.delete'), tag_path(tag) , data: {
-        turbo_method: :delete,
-        turbo_confirm: t('common.confirm')
-      } %>
+<div id="<%= dom_id tag %>" class="bg-white p-4 mb-4 rounded-md shadow-md">
+  <p class="flex items-center justify-between">
+    <span class="text-lg font-semibold"><%= tag.name %></span>
+    <span class="flex space-x-2">
+      <%= link_to t('.edit'), edit_tag_path(tag), class: 'text-blue-500 hover:text-blue-700' %>
+      <%= link_to t('.delete'), tag_path(tag), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') }, class: 'text-red-500 hover:text-red-700' %>
+    </span>
   </p>
-
 </div>

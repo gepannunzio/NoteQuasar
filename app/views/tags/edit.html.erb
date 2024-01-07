@@ -1,7 +1,9 @@
-<h1><% t('.title' )%></h1>
+<div class="max-w-screen-lg mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
+  <h1 class="text-3xl font-bold mb-8"><%= t('.title') %></h1>
 
-<%= render "form", tag: @tag %>
+  <%= render "form", tag: @tag %>
 
-<div>
-  <%= link_to t('common.back'), tags_path %>
+  <div class="mt-8">
+    <%= link_to t('common.back'), tags_path, class: 'text-indigo-500 hover:text-indigo-700' %>
+  </div>
 </div>

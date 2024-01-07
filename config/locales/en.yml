@@ -1,41 +1,79 @@
 es:
+  layouts:
+    application:    
+      metatitle: ' My Notes'
   activerecord:
     models:
       note: Note
+      user: User
+      tag: Tag
     attributes:
       note:
         title: 'Title'
         body: 'Body'
-    errors:
-      models:
-        note:
-          attributes:
-            title:
-              blank: "Can't be empty"
-            body:
-              blank: "Can't be empty"
+      user:
+        email: 'Email'
+        username: 'Username'
+        password: 'Password'
+      tag:
+        name: 'Name'
   common:
     confirm: "Are you sure?"
     back: 'Go Back'
+    not_logged_in: 'You have to login or create an account'
+    not_authorized: 'You don not have permissions for this action'
+    show: 'Inspect'
+    delete: 'Delete'
+    edit: 'Edit'
   shared:
     header:
       add: 'Add Note'
+      login: 'Login'
+      register: 'Register'
+      logout: 'Logout'
+      archives: 'Archive'
+      actives: 'Active'
+  authentication:
+    users:
+      create:
+        created: 'Your account has been created!'
+      new:
+        register: 'Register now'
+    sessions:
+      create:
+        created: 'Welcome!'
+        failed: 'Invalid login!'
+      destroy:
+        destroyed: 'Session ended. Bye!'
+      new:
+        login: 'Log In'
   notes:
     edit:
       title: "Edit Note"
     new:
       title: "New Note"
     index:
-      title: 'Notes: '
+      title: 'Active Notes: '
+      all: 'All'
+      query_text: 'Search...'
     show:
       edit: 'Edit Note'
       delete: 'Delete Note'
+      activate: 'Activate Note'
+      archive: 'Archive Note'
+      back: 'Go Back'
     create:
       created: "Your note has been succesfully created"
     update:
       updated: "Your note has been successfully updated"
     destroy:
       destroyed: "Your note has been deleted"
+    form:
+      new_tag: 'New Tag'
+      save: 'Save Note'
+    archive:
+      activate: 'Activate Note'
+      archive: 'Archive Note'
   tags:
     tag:
       edit: 'Edit'
@@ -52,4 +90,18 @@ es:
     destroy:
       destroyed: 'Your tag has been successfully destroyed'
     new:
-      title: 'New tag'
+      tag: 'New tag'
+  archives:
+      index:
+        title: 'Archive Notes'
+        all: 'All'
+        query_text: 'Search...'
+      create:
+        created: 'Your Note has been Archived'
+      destroy:
+        destroyed: 'Your Note has become Active'
+  home:
+    welcome:
+      welcome: 'Welcome to NoteQuasar'
+      phrase: 'Are you ready for joining us onto this Journey?'
+      get_started: 'Get Started!'

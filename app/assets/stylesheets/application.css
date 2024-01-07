@@ -13,3 +13,141 @@
  *= require_tree .
  *= require_self
  */
+
+ .page-header {
+  background-color: #f0f0f0; /* Background color for the header */
+  padding: 10px; /* Padding around the header */
+  margin-bottom: 20px; /* Margin below the header */
+}
+
+.page-header h2 {
+  color: #333; /* Text color for the title */
+  font-size: 24px; /* Font size for the title */
+}
+
+
+.link-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  color: #4A5568;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+  
+.link-btn:hover {
+  background-color: #E2E8F0;
+  color: #2D3748;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #a52cf0;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.log-btn {
+  background: #d96af2;
+  background-image: -webkit-linear-gradient(top, #d96af2, #a52cf0);
+  background-image: -moz-linear-gradient(top, #d96af2, #a52cf0);
+  background-image: -ms-linear-gradient(top, #d96af2, #a52cf0);
+  background-image: -o-linear-gradient(top, #d96af2, #a52cf0);
+  background-image: linear-gradient(to bottom, #d96af2, #a52cf0);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.log-btn:hover {
+  background: #a52cf0;
+  background-image: -webkit-linear-gradient(top, #a52cf0, #5622f2);
+  background-image: -moz-linear-gradient(top, #a52cf0, #5622f2);
+  background-image: -ms-linear-gradient(top, #a52cf0, #5622f2);
+  background-image: -o-linear-gradient(top, #a52cf0, #5622f2);
+  background-image: linear-gradient(to bottom, #a52cf0, #5622f2);
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background-color: #356db0;
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-show {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-edit {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  background-color: #fff; /* Add this line for white background */
+}
+
+.table th {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  background-color: #f2f2f2;
+}
+
+.btn-primary {
+  background-color: #3490dc;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #38a169;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background-color: #e53e3e;
+  color: #ffffff;
+}
+
+.btn:hover {
+  filter: brightness(90%);
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}

@@ -1,0 +1,13 @@
+<%= form_tag(archives_path, method: :get, class: 'flex items-center flex-wrap') do %>
+  <% Tag.where(user_id: Current.user.id).each do |tag| %>
+    <% displayed = @displayed_tag_ids.include?(tag.id) %>
+    <label class="tag flex items-center px-4 py-2 rounded-full border border-gray-300 
+                  bg-white text-gray-800 hover:bg-gray-100 transition-all ease-in-out duration-300 mb-2 mr-2">
+      <%= check_box_tag 'tag_ids[]', tag.id, displayed, class: 'mr-2 text-blue-500 focus:outline-none' %>
+      <%= tag.name %>
+    </label>
+  <% end %>
+
+  <%= submit_tag 'Filter', class: 'tag flex items-center px-4 py-2 rounded-full border border-gray-300 
+                  bg-blue-300 text-gray-800 hover:bg-purple-400 transition-all ease-in-out duration-300 mb-2 mr-2' %>
+<% end %>

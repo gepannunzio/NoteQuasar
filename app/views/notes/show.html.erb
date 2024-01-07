@@ -1,10 +1,37 @@
-<h1 class='title' > <%= @note.title %> </h1>
+<div class="note-details bg-white p-6 rounded-md shadow-md mx-6 my-6">
+  <div class="flex items-center mb-4">
+    <h1 class="text-4xl font-bold"><%= @note.title %></h1>
+  </div>
+  <p class="text-gray-700 whitespace-pre-line mb-6"><%= @note.body %></p>
 
-<p class='body' > <%= @note.body %> </p>
+    <br/>
+    <br/>
 
-<%= link_to t('.edit'), edit_note_path(@note) %>
+  <% if @note.owner? %>
+    <div class="flex space-x-1">
+      <%= link_to t('.edit'), edit_note_path(@note), class: 'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2' %>
+      <%= render partial: 'archive', locals: { note: @note } %>
+      <%= link_to t('.delete'), note_path(@note), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') }, class: 'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2' %>
+    </div>
+  <% end %>
 
-<%= link_to t('.delete'), note_path(@note) , data: {
-    turbo_method: :delete,
-    turbo_confirm: t('common.confirm')
-} %>
+  <div class="tags mt-6">
+    <% if @note.tags.any? %>
+      <p class="text-lg font-semibold mb-2">Tags:</p>
+      <ul class="list-disc pl-6">
+        <% @note.tags.each do |tag| %>
+          <li class="text-blue-500"><%= tag.name %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="text-gray-500">No tags for this note.</p>
+    <% end %>
+  </div>
+
+    <br/>
+
+    <div class="flex items-center mb-4">
+        <% redirect_path = @note.archive.present? ? archives_path : notes_path %>
+        <%= link_to t('.back'), redirect_path, class: 'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2' %>
+    </div>
+</div>
