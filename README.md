@@ -27,7 +27,7 @@ asdf plugin add nodejs
 
 2. Run setup bash script to install
 
-cd Pannunzio-037fd6
+cd NoteQuasar
 <br/>
 ./setup.sh
 
@@ -41,7 +41,7 @@ asdf plugin add nodejs
 
 2. Go To APP Repository
 
-cd Pannunzio-037fd6
+cd NoteQuasar
 
 
 3. Install Ruby and Node.js:
@@ -79,6 +79,7 @@ rails tailwindcss:install
 rake db:create
 <br/>
 bin/importmap pin tailwindcss-stimulus-components
+rake db:migrate
 
 8. Run Server
 
